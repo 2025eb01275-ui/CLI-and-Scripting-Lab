@@ -1,0 +1,29 @@
+Question 3 Explanation
+
+Command: gcc file_processing.c -o file_processing
+Observation:
+The C program compiled successfully and created the executable file.
+
+Explanation:
+The gcc compiler converted the source code into an executable program.
+
+Command: ./file_processing
+Observation:
+The program created the employee file, stored records, and displayed them successfully.
+
+Explanation:
+The program used open/create, write, read, and close operations to manage employee records.
+
+Command: ls
+Observation:
+The directory contains file_processing.c, file_processing, employee.dat, and explanation.txt.
+
+Explanation:
+The ls command verifies that all required files were created successfully.
+
+System Calls Used:
+• open()/fopen() – Creates and opens the file.
+• write()/fwrite() – Writes employee records.
+• read()/fread() – Reads records from the file.
+• lseek() – Used for random access in file processing.
+• close()/fclose() – Closes the file after operations.
