@@ -1,0 +1,18 @@
+Question 4 – Log Monitoring Using Pipes, grep, tail, Redirection and /dev/null
+
+Command Pipeline:
+tail -f system.log 2>/dev/null | grep "ERROR" >> error_report.txt
+
+Demonstration Command:
+grep "ERROR" system.log > error_report.txt
+
+Observation:
+A sample log file named system.log was created containing INFO, WARNING, and ERROR messages. The ERROR messages were extracted and saved into error_report.txt. This demonstrates how grep filters specific log entries, while the pipeline can continuously monitor new log entries in real time.
+
+Explanation:
+1. tail -f continuously monitors the log file and displays newly added entries in real time.
+2. The pipe (|) sends the output of tail directly to grep without creating temporary files.
+3. grep "ERROR" filters only the lines containing the word ERROR.
+4. The >> operator appends the filtered ERROR messages to error_report.txt.
+5. The 2>/dev/null redirection suppresses unnecessary error messages, keeping the terminal output clean.
+6. Together, these commands provide an efficient real-time log monitoring solution.
