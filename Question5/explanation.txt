@@ -1,0 +1,33 @@
+Question 5 – Recovery Mechanisms in vi Editor
+
+Scenario:
+A software developer is editing a critical configuration file using vi. During editing, the system crashes before the file is saved.
+
+Recovery Mechanisms:
+
+1. Swap Files (.swp)
+- vi automatically creates a swap file while editing.
+- After a crash, the swap file can be used to recover unsaved changes using:
+  vim -r filename
+
+2. Undo History
+- Undo history allows reverting recent changes using the 'u' command.
+- It only works if the editing session is still active or persistent undo has been enabled.
+
+3. Registers
+- vi stores deleted and copied text in registers.
+- Registers help recover recently deleted or copied text but cannot recover an entire crashed editing session.
+
+4. Backup Files
+- If backup is enabled, vi creates a backup copy of the original file before saving.
+- Backup files protect the original content but do not contain unsaved changes made before the crash.
+
+5. Auto-Recovery
+- vi detects existing swap files when reopening a file after a crash.
+- It prompts the user to recover the previous editing session.
+
+Most Reliable Recovery Strategy:
+The most reliable recovery method is using the swap file with auto-recovery because it preserves unsaved changes after an unexpected crash. Backup files only contain previously saved data, while undo history and registers are limited in recovering an interrupted session.
+
+Conclusion:
+Swap files combined with vi's built-in auto-recovery provide the best protection against data loss and are the recommended recovery strategy.
